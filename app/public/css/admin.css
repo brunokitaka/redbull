@@ -260,6 +260,9 @@ button.cadastro {
     li.cadastro {
         font-size: 100%;
     }
+    div#divForm form{
+        width: 80%;
+    }
 }
 
 h4#chega {
