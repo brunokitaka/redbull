@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "Redbull";
+    src: url(/css/fonts/Futura-Heavy-BT.ttf);
+}
+
+body {
+    background: #ffe33e;
+    background-image: url(/images/redback.jpg);
+    background-size: cover;
+}
+
+nav {
+    background: #ffe33e !important;
+}
+
+.nav-link {
+    font-family: Redbull;
+    /* color: white !important; */
+}
+
+h1 {
+    color: white;
+    font-weight: bolder;
+    /* -webkit-text-stroke: 3px black; */
+    text-align: center;
+    font-family: Redbull;
+    font-size: 500%;
+    width: 100%;
+    /* background: #ffe33e; */
+}
+
+h2 {
+    color: white;
+    font-weight: bolder;
+    /* -webkit-text-stroke: 3px black; */
+    text-align: center;
+    font-family: Redbull;
+    font-size: 400%;
+    /* background: #ffe33e; */
+}
+
+h4#red {
+    color: white;
+    font-weight: bolder;
+    /* text-align: center; */
+    font-family: Redbull;
+    size: 100%;
+    /* margin: 0 auto; */
+    position: absolute;
+    /* left: 50%; */
+    /* transform: translatex(-50%); */
+}
+
+h4#chega {
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+    font-family: Redbull;
+    size: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+#one {
+    color: red;
+}
+
+#two {
+    color: #4751af;
+}
+
+a img {
+    width: 4rem;
+}
+
+button {
+    font-family: Redbull;
+    font-size: 300% !important;
+    color: #000;
+    background-color: white;
+    border-radius: 0 !important;
+    border-color: #000 !important;
+    border-width: 5px !important;
+}
+
+form {
+    text-align: center;
+}
+
+form input {
+    padding-left: 1%;
+    font-family: Redbull;
+    background-color: white;
+    border-color: #000;
+    border-width: 5px;
+    font-size: 200%;
+    width: 50%;
+}
+
+form select {
+    padding-left: 1%;
+    font-family: Redbull;
+    background-color: white;
+    border-color: #000;
+    border-width: 5px;
+    font-size: 200%;
+    width: 50%;
+}
+
+form input::placeholder {
+    color: #000;
+}
+
+#botaoEnviar {
+    background: none;
+    width: 200px;
+}
+
+button#navButton {
+    background: #ffe33e;
+}
+
+.titulos {
+    /* background: #ffe33e; */
+    -webkit-text-stroke: 1px black;
+}
+
+#navButton {
+    font-size: 100% !important;
+    border: 2px solid #000 !important;
+    border-radius: 5px !important;
+}
+
+@media only screen and (max-width: 601px) {
+    .titulos {
+        display: none;
+    }
+    form input{
+        font-size: 100%;
+    }
+    form select{
+        font-size: 100%;
+    }
+    button#btnEnvio{
+        font-size: 100% !important;
+    }
+}

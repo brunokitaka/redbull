@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Redbull";
+    src: url(/css/fonts/Futura-Heavy-BT.ttf);
+}
+
+body{
+    background: yellow;
+    font-family: Redbull;
+}
