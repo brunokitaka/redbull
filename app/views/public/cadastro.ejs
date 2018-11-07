@@ -53,23 +53,23 @@
   <br><br>
 
   <form action="/enviar" method="post">
-    <input type="text" placeholder="Nome" name="nomeAluno">
+    <input type="text" placeholder="Nome" name="nomeAluno" required>
     <br><br>
-    <select name="idAtletica">
+    <select name="idAtletica" required>
         <option value="" disabled selected>Atlética...</option>
         <% for(var i = 0; i < atleticas.length; i++) { %>
           <option value="<%=atleticas[i].idAtletica%>"><%=atleticas[i].nome%></option>
         <% } %>
     </select>
     <br><br>
-    <select name="idEstabelecimento">
+    <select name="idEstabelecimento" required>
         <option value="" disabled selected>Estabelecimento...</option>
         <% for(var i = 0; i < estabelecimentos.length; i++) { %>
           <option value="<%=estabelecimentos[i].idEstabelecimento%>"><%=estabelecimentos[i].nome%></option>
         <% } %>
     </select>
     <br><br>
-    <input type="text" placeholder="Código" name="idCodigo">
+    <input type="text" placeholder="Código" name="idCodigo" required>
     <br><br>
     <button id="btnEnvio" type="submit">Enviar</button>
     <!-- <input type="image" src="/images/lata.png" id="botaoEnviar" alt="Submit"/> -->
