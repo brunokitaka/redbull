@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
@@ -27,11 +28,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a href="/"><h4 id="chega">#<span id="one">Chega</span><span id="two">Mais</span></h4></a>
+    <a href="/">
+      <h4 id="chega">#<span id="one">Chega</span><span id="two">Mais</span></h4>
+    </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item active">
@@ -43,7 +46,7 @@
       </ul>
     </div>
   </nav>
-  
+
   <br>
 
   <div class="titulos">
@@ -52,24 +55,28 @@
 
   <br><br>
 
-  <form action="/enviar" method="post">
+  <form id="cadastro" action="javascript:enviarCodigo()" method="post">
     <input type="text" placeholder="Nome" name="nomeAluno" required>
     <br><br>
-    <select name="idAtletica" required>
-        <option value="" disabled selected>Atlética...</option>
-        <% for(var i = 0; i < atleticas.length; i++) { %>
-          <option value="<%=atleticas[i].idAtletica%>"><%=atleticas[i].nome%></option>
-        <% } %>
+    <select id="idAtletica" name="idAtletica" required>
+      <option value="" disabled selected>Atlética...</option>
+      <% for(var i = 0; i < atleticas.length; i++) { %>
+      <option value="<%=atleticas[i].idAtletica%>">
+        <%=atleticas[i].nome%>
+      </option>
+      <% } %>
     </select>
     <br><br>
-    <select name="idEstabelecimento" required>
-        <option value="" disabled selected>Estabelecimento...</option>
-        <% for(var i = 0; i < estabelecimentos.length; i++) { %>
-          <option value="<%=estabelecimentos[i].idEstabelecimento%>"><%=estabelecimentos[i].nome%></option>
-        <% } %>
+    <select id="idEstabelecimento" name="idEstabelecimento" required>
+      <option value="" disabled selected>Estabelecimento...</option>
+      <% for(var i = 0; i < estabelecimentos.length; i++) { %>
+      <option value="<%=estabelecimentos[i].idEstabelecimento%>">
+        <%=estabelecimentos[i].nome%>
+      </option>
+      <% } %>
     </select>
     <br><br>
-    <input type="text" placeholder="Código" name="idCodigo" required>
+    <input type="text" placeholder="Código" id="idCodigo" name="idCodigo" required>
     <br><br>
     <button id="btnEnvio" type="submit">Enviar</button>
     <!-- <input type="image" src="/images/lata.png" id="botaoEnviar" alt="Submit"/> -->
@@ -77,5 +84,26 @@
   <br><br>
 
 </body>
+
+<script>
+  function enviarCodigo() {
+    cadastro = document.getElementById("cadastro");
+    let envio = {
+      "nomeAluno": cadastro.nomeAluno.value,
+      "idAtletica": cadastro.idAtletica.value,
+      "idEstabelecimento": cadastro.idEstabelecimento.value,
+      "idCodigo": cadastro.idCodigo.value
+    }
+    console.log(envio);
+
+    axios.post('/enviar', envio)
+			.then((response) => {
+				alert(response.data);
+			})
+			.catch((error) => {
+				alert('Erro ao cadastrar Codigo' + error);
+			});
+  }
+</script>
 
 </html>

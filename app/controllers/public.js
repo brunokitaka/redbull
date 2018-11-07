@@ -57,6 +57,7 @@ module.exports.enviar = function (app, req, res) {
             res.send("Erro ao verificar o Codigo inserido!");
             return;
         }
+        console.log(result);
         if(result[0] === undefined){
             console.log("Codigo nao existente");
             res.send("Codigo invalido!")
@@ -117,7 +118,7 @@ module.exports.enviar = function (app, req, res) {
                             // Print para DEBUG.
                             console.log(result);
 
-                            res.redirect("/");
+                            res.send("Codigo cadastrado com Sucesso!");
                             return;
                         });
                     });
